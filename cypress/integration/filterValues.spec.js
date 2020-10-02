@@ -13,3 +13,8 @@
  *  Then I should get confirmation that the value was not accepted
  *  And that value should be removed from the list
  */
+it('presents cards for each value', () => {});
+it('displays confirmation when button "Yes" is clicked', () => {});
+it('keeps affirmed value in list when button "Yes" is clicked', () => {});
+it('displays confirmation when button "No" is clicked', () => {});
+it('removes denied value from list when button "No" is clicked', () => {});
