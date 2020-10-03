@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { ValueModal } from './ValueModal';
 
 export const ValueWorksheet = () => {
 
@@ -158,15 +159,10 @@ export const ValueWorksheet = () => {
       setValueIdx(list.length - 1)
     }
   }
-  const Button = () => (
-    <button onClick={advanceValue}>Next</button>
-  );
 
   return (
     <>
-    {valueIdx}
-    {<h2>{list[valueIdx]}</h2>}
-    <Button />
+      <ValueModal list={list} valueIdx={valueIdx} advanceValue={advanceValue} />
     </>
   );
 };
