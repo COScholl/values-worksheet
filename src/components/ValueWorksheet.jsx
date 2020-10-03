@@ -149,12 +149,24 @@ export const ValueWorksheet = () => {
     'Vitality',
   ]);
   // useState to keep tabs on which item should be rendered at a time
-  const [value, setValue] = useState('Accountability');
-  // useEffect to keep tabs on state change and edit list
+  const [valueIdx, setValueIdx] = useState(0);
+  // helper function advances displayed value
+  const advanceValue = () => {
+    if(valueIdx < list.length - 1) {
+      setValueIdx(valueIdx + 1)
+    } else {
+      setValueIdx(list.length - 1)
+    }
+  }
+  const Button = () => (
+    <button onClick={advanceValue}>Next</button>
+  );
 
   return (
     <>
-    {list.filter((item) => item === value).map((item) => <h2 key={`${item}`}>{item}</h2>)}
+    {valueIdx}
+    {<h2>{list[valueIdx]}</h2>}
+    <Button />
     </>
   );
 };
