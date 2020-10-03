@@ -3,7 +3,7 @@ import { ValueModal } from './ValueModal';
 
 export const ValueWorksheet = () => {
 
-  const [list, setList] = useState([
+  const [valuesList, setValuesList] = useState([
     'Accountability',
     'Accuracy',
     'Achievement',
@@ -153,33 +153,33 @@ export const ValueWorksheet = () => {
   const [valueIdx, setValueIdx] = useState(0);
 
   /**
-   * helper function that advances value from list to display
+   * Helper function that advances value from valuesList to display
    * @modifies {valueIdx} calls setValueIdx to mutate valueIdx
    */
   const advanceValue = () => {
-    if(valueIdx < list.length - 1) {
+    if(valueIdx < valuesList.length - 1) {
       setValueIdx(valueIdx + 1)
     } else {
-      setValueIdx(list.length - 1)
+      setValueIdx(valuesList.length - 1)
     }
   }
 
   /**
-   * helper function that filters value from list
+   * Helper function that filters value from valuesList
    * New value at valueIdx is displayed
-   * @param    {string} listValue - current value of list at valueIdx
-   * @modifies {list} calls setList to mutate valueIdx
+   * @param    {string} listValue - current value of valuesList at valueIdx
+   * @modifies {valuesList} calls setValuesList to mutate valueIdx
    */
   const rejectAndAdvanceValue = (listValue) => {
-    const returnList = list.filter((elem) => elem !== listValue);
+    const returnList = valuesList.filter((elem) => elem !== listValue);
 
-    setList(returnList);
+    setValuesList(returnList);
   }
 
   return (
     <>
       <ValueModal
-        list={list}
+        valuesList={valuesList}
         valueIdx={valueIdx}
         advanceValue={advanceValue}
         rejectAndAdvanceValue={rejectAndAdvanceValue}
