@@ -151,7 +151,11 @@ export const ValueWorksheet = () => {
   ]);
   // useState to keep tabs on which item should be rendered at a time
   const [valueIdx, setValueIdx] = useState(0);
-  // helper function advances displayed value
+
+  /**
+   * helper function that advances value from list to display
+   * @modifies {valueIdx} calls setValueIdx to mutate valueIdx
+   */
   const advanceValue = () => {
     if(valueIdx < list.length - 1) {
       setValueIdx(valueIdx + 1)
@@ -160,9 +164,26 @@ export const ValueWorksheet = () => {
     }
   }
 
+  /**
+   * helper function that filters value from list
+   * New value at valueIdx is displayed
+   * @param    {string} listValue - current value of list at valueIdx
+   * @modifies {list} calls setList to mutate valueIdx
+   */
+  const rejectAndAdvanceValue = (listValue) => {
+    const returnList = list.filter((elem) => elem !== listValue);
+
+    setList(returnList);
+  }
+
   return (
     <>
-      <ValueModal list={list} valueIdx={valueIdx} advanceValue={advanceValue} />
+      <ValueModal
+        list={list}
+        valueIdx={valueIdx}
+        advanceValue={advanceValue}
+        rejectAndAdvanceValue={rejectAndAdvanceValue}
+      />
     </>
   );
 };
