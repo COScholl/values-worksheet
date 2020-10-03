@@ -148,11 +148,13 @@ export const ValueWorksheet = () => {
     'Vision',
     'Vitality',
   ]);
-
+  // useState to keep tabs on which item should be rendered at a time
+  const [value, setValue] = useState('Accountability');
+  // useEffect to keep tabs on state change and edit list
 
   return (
     <>
-    {list.map((item) => <h2 key={`${item}`}>{item}</h2>)}
+    {list.filter((item) => item === value).map((item) => <h2 key={`${item}`}>{item}</h2>)}
     </>
   );
 };
