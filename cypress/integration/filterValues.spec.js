@@ -21,11 +21,44 @@
  *  Then I should get confirmation that the value was not accepted
  *  And that value should be removed from the list
  */
- it('visits the app', () => {
-   // baseUrl in ./cypress.json
-   cy.visit('/')
- });
-it('presents cards for each value after "Accept" or "Reject is clicked"', () => {
+it('visits the app', () => {
+ // baseUrl in ./cypress.json
+ cy.visit('/')
+});
+it(
+  'When I am presented with a value and click "Next", I should see the next value from the list',
+() => {
+  // asyc assign value of header to const
+  cy.get('.modal__header').then(($value) => {
+
+    const oldVal = $value.text();
+    // click "next"
+    cy.get('.modal__value-span--next').click();
+    // async assign new value to const and compare to oldVal
+    cy.get('.modal__header').should(($newVal) => {
+      expect($newVal.text()).not.to.eq(oldVal);
+    })
+  });
+});
+it(
+  'When I am presented with a value and click "Prev", I should see the prev value from the list',
+() => {
+  // asyc assign value of header to const
+  cy.get('.modal__header').then(($value) => {
+
+    const oldVal = $value.text();
+    // click "next"
+    cy.get('.modal__value-span--next').click();
+    cy.get('.modal__value-span--prev').click();
+    // async assign new value to const and compare to oldVal
+    cy.get('.modal__header').should(($newVal) => {
+      expect($newVal.text()).to.eq(oldVal);
+    })
+  });
+});
+it('displays confirmation when button "Accept" is clicked', () => {});
+it(
+  'When I am presented with a value and click "Accept", I should see the next value from the list', () => {
   // asyc assign value of header to const
   cy.get('.modal__header').then(($value) => {
 
@@ -38,15 +71,20 @@ it('presents cards for each value after "Accept" or "Reject is clicked"', () => 
     })
   });
 });
-it('displays confirmation when button "Accept" is clicked', () => {
-
-});
-it('keeps affirmed value in list when button "Accept" is clicked', () => {
-
-});
-it('keeps affirmed value in list when button "Accept" is clicked', () => {
-
-});
 it('displays confirmation when button "Reject" is clicked', () => {});
-// test with next and previous functionality
-it('removes denied value from list when button "Reject" is clicked', () => {});
+it(
+  'When I am presented with a value and click "Reject", that value should be removed from the list', () => {
+    // asyc assign value of header to const
+    cy.get('.modal__header').then(($value) => {
+
+      const oldVal = $value.text();
+      // click "next"
+      cy.get('.modal__accept-dismiss-span--reject').click();
+      cy.get('.modal__value-span--prev').click();
+      // async assign new value to const and compare to oldVal
+      cy.get('.modal__header').should(($newVal) => {
+        expect($newVal.text()).to.not.eq(oldVal);
+      })
+    });
+
+});

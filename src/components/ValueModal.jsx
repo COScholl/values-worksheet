@@ -10,7 +10,7 @@ export const ValueModal = (props) => {
    */
   const PreviousButton = () => (
     <button
-      className='modal__value-span--previous'
+      className='modal__value-span--prev btn'
       onClick={regressValue}
     >
       Previous
