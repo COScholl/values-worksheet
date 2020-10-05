@@ -31,7 +31,7 @@ it('presents cards for each value after "Accept" or "Reject is clicked"', () => 
 
     const oldVal = $value.text();
     // click "accept"
-    cy.get('.modal__btn--accept').click();
+    cy.get('.modal__accept-dismiss-span--accept').click();
     // async assign new value to const and compare to oldVal
     cy.get('.modal__header').should(($newVal) => {
       expect($newVal.text()).not.to.eq(oldVal);

@@ -160,7 +160,21 @@ export const ValueWorksheet = () => {
     if(valueIdx < valuesList.length - 1) {
       setValueIdx(valueIdx + 1)
     } else {
-      setValueIdx(valuesList.length - 1)
+      // already at end of list
+      return;
+    }
+  }
+
+  /**
+   * Helper function that regresses value from valueList to display
+   * @modifies {valueIdx} calls setValueIdx to mutate valueIdx
+   */
+  const regressValue = () => {
+    if(valueIdx > 0) {
+      setValueIdx(valueIdx - 1)
+    } else {
+      // already at beginning of list
+      return;
     }
   }
 
@@ -182,6 +196,7 @@ export const ValueWorksheet = () => {
         valuesList={valuesList}
         valueIdx={valueIdx}
         advanceValue={advanceValue}
+        regressValue={regressValue}
         rejectAndAdvanceValue={rejectAndAdvanceValue}
       />
     </>
