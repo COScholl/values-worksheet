@@ -1,7 +1,15 @@
 import React from 'react';
 
 export const ValueModal = (props) => {
-  const {rejectAndAdvanceValue, advanceValue, regressValue, valuesList, valueIdx} = props;
+  const {
+    rejectAndAdvanceValue,
+    advanceValue,
+    regressValue,
+    valuesList,
+    valueIdx,
+    acceptedVal,
+    rejectedVal
+  } = props;
   let testValue = valuesList[valueIdx];
 
   /**
@@ -65,6 +73,8 @@ export const ValueModal = (props) => {
           <h2 className='modal__header'>{valuesList[valueIdx]}</h2>
           <NextButton />
         </span>
+        <p style={{display: 'none'}}>{`${acceptedVal} Accepted!`}</p>
+        <p style={{display: 'none'}}>{`${rejectedVal} Rejected!`}</p>
         <br />
         <span className='modal__accept-dismiss-span'>
           <RejectButton />

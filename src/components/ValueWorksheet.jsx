@@ -151,6 +151,12 @@ export const ValueWorksheet = () => {
   ]);
   // useState to keep tabs on which item should be rendered at a time
   const [valueIdx, setValueIdx] = useState(0);
+  // set accepted and rejected values. Only set the most recent change and reset
+  // the other to undefined with a helper function
+  const [acceptedVal, setAcceptedVal] = useState('');
+  const [rejectedVal, setRejectedVal] = useState('');
+
+  // @TODO: create useEffect to toggle accepted or rejected based on values
 
   /**
    * Helper function that advances value from valuesList to display
@@ -195,6 +201,8 @@ export const ValueWorksheet = () => {
       <ValueModal
         valuesList={valuesList}
         valueIdx={valueIdx}
+        acceptedVal={acceptedVal}
+        rejectedVal={rejectedVal}
         advanceValue={advanceValue}
         regressValue={regressValue}
         rejectAndAdvanceValue={rejectAndAdvanceValue}
