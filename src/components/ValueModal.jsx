@@ -9,7 +9,12 @@ export const ValueModal = (props) => {
    * Calls helper function advanceValue()
    */
   const AcceptButton = () => (
-    <button onClick={advanceValue}>Accept</button>
+    <button
+      className='modal__btn--accept'
+      onClick={advanceValue}
+    >
+      Accept
+    </button>
   );
 
   /**
@@ -17,14 +22,23 @@ export const ValueModal = (props) => {
    * calls helper function rejectAndAdvanceValue()
    */
   const RejectButton = () => (
-    <button onClick={() => rejectAndAdvanceValue(testValue)}>Reject</button>
+    <button
+      className='modal__btn--reject'
+      onClick={() => rejectAndAdvanceValue(testValue)}
+    >
+      Reject
+    </button>
   );
 
   return (
     <>
-      {valueIdx}
-      {<h2>{valuesList[valueIdx]}</h2>}
-      <span><RejectButton /><AcceptButton /></span>
+      <div className='modal__wrapper'>
+        {<h2 className='modal__header'>{valuesList[valueIdx]}</h2>}
+        <span className='modal__btn--span'>
+          <RejectButton />
+          <AcceptButton />
+        </span>
+      </div>
     </>
   )
 }

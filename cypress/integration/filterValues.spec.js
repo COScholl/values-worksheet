@@ -2,6 +2,14 @@
  * Background
  *  Given a list of values
  *  And when presented with each value from the list
+ * Scenario - advance values from the list
+ *  When I am presented with a value
+ *  And I click on a "Next" button
+ *  Then I should see the next value in the list
+ * Scenario - recall values from the list previously accepted
+ *  When I am presented with a value
+ *  And I click on a "Previous" button
+ *  Then I should see the previous value in the list
  * Scenario - confirm the value resonates with me
  *  When I am presented with a value that resonates with me
  *  And I click 'Yes'
@@ -13,8 +21,32 @@
  *  Then I should get confirmation that the value was not accepted
  *  And that value should be removed from the list
  */
-it('presents cards for each value', () => {});
-it('displays confirmation when button "Yes" is clicked', () => {});
-it('keeps affirmed value in list when button "Yes" is clicked', () => {});
-it('displays confirmation when button "No" is clicked', () => {});
-it('removes denied value from list when button "No" is clicked', () => {});
+ it('visits the app', () => {
+   // baseUrl in ./cypress.json
+   cy.visit('/')
+ });
+it('presents cards for each value after "Accept" or "Reject is clicked"', () => {
+  // asyc assign value of header to const
+  cy.get('.modal__header').then(($value) => {
+
+    const oldVal = $value.text();
+    // click "accept"
+    cy.get('.modal__btn--accept').click();
+    // async assign new value to const and compare to oldVal
+    cy.get('.modal__header').should(($newVal) => {
+      expect($newVal.text()).not.to.eq(oldVal);
+    })
+  });
+});
+it('displays confirmation when button "Accept" is clicked', () => {
+
+});
+it('keeps affirmed value in list when button "Accept" is clicked', () => {
+
+});
+it('keeps affirmed value in list when button "Accept" is clicked', () => {
+
+});
+it('displays confirmation when button "Reject" is clicked', () => {});
+// test with next and previous functionality
+it('removes denied value from list when button "Reject" is clicked', () => {});
