@@ -251,10 +251,12 @@ export const ValueWorksheet = () => {
    * @modifies {rejectedValue}
    * @modifies {acceptedValue}
    */
-  const rejectAndAdvanceValue = (listValue, valueIdx) => {
+  const rejectAndAdvanceValue = (listValue) => {
     const valueToReject = listValue;
+    const numValues = valuesList.length;
     const returnList = valuesList.filter((elem) => elem !== listValue);
-
+    // set valueIdx to previous if valueToReject is last in valuesList
+    if(listValue === valuesList[numValues - 1] && numValues > 1) setValueIdx(valueIdx - 1);
     setValuesList(returnList);
     setAcceptedVal('');
     setRejectedVal(valueToReject);
