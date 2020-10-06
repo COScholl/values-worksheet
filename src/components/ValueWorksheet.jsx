@@ -184,16 +184,25 @@ export const ValueWorksheet = () => {
     }
   }
 
+  const acceptAndAdvanceValue = () => {
+    advanceValue();
+    setRejectedVal('');
+    setAcceptedVal(valuesList[valueIdx]);
+  };
+
   /**
    * Helper function that filters value from valuesList
    * New value at valueIdx is displayed
    * @param    {string} listValue - current value of valuesList at valueIdx
    * @modifies {valuesList} calls setValuesList to mutate valueIdx
    */
-  const rejectAndAdvanceValue = (listValue) => {
+  const rejectAndAdvanceValue = (listValue, valueIdx) => {
+    const valueToReject = listValue;
     const returnList = valuesList.filter((elem) => elem !== listValue);
 
     setValuesList(returnList);
+    setAcceptedVal('');
+    setRejectedVal(valueToReject);
   }
 
   return (
@@ -205,6 +214,7 @@ export const ValueWorksheet = () => {
         rejectedVal={rejectedVal}
         advanceValue={advanceValue}
         regressValue={regressValue}
+        acceptAndAdvanceValue={acceptAndAdvanceValue}
         rejectAndAdvanceValue={rejectAndAdvanceValue}
       />
     </>

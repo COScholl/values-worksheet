@@ -2,6 +2,7 @@ import React from 'react';
 
 export const ValueModal = (props) => {
   const {
+    acceptAndAdvanceValue,
     rejectAndAdvanceValue,
     advanceValue,
     regressValue,
@@ -41,12 +42,12 @@ export const ValueModal = (props) => {
 
   /**
    * Button component that advances value on display from props.valuesList
-   * Calls helper function advanceValue()
+   * Calls helper function acceptAndAdvanceValue()
    */
   const AcceptButton = () => (
     <button
       className='modal__accept-dismiss-span--accept btn'
-      onClick={advanceValue}
+      onClick={acceptAndAdvanceValue}
     >
       Accept
     </button>
@@ -73,8 +74,18 @@ export const ValueModal = (props) => {
           <h2 className='modal__header'>{valuesList[valueIdx]}</h2>
           <NextButton />
         </span>
-        <p style={{display: 'none'}}>{`${acceptedVal} Accepted!`}</p>
-        <p style={{display: 'none'}}>{`${rejectedVal} Rejected!`}</p>
+        <p
+          className='modal__message--accepted'
+          /* style={{display: 'none'}} */
+        >
+          {`${acceptedVal} Accepted!`}
+        </p>
+        <p
+          className='modal__message--rejected'
+          /* style={{display: 'none'}} */
+        >
+          {`${rejectedVal} Rejected!`}
+        </p>
         <br />
         <span className='modal__accept-dismiss-span'>
           <RejectButton />
