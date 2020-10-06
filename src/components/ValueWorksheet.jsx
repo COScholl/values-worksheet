@@ -7,157 +7,165 @@ export const ValueWorksheet = () => {
     'Accountability',
     'Accuracy',
     'Achievement',
-    'Adventurousness',
-    'Altruism',
-    'Ambition',
-    'Assertiveness',
-    'Balance',
-    'Being the best',
-    'Belonging',
-    'Boldness',
-    'Calmness',
-    'Carefulness',
-    'Challenge',
-    'Cheerfulness',
-    'Clear-mindedness',
-    'Commitment',
-    'Community',
-    'Compassion',
-    'Competitiveness',
-    'Consistency',
-    'Contentment',
-    'Continuous Improvement',
-    'Contribution',
-    'Control',
-    'Cooperation',
-    'Correctness',
-    'Courtesy',
-    'Creativity',
-    'Curiosity',
-    'Decisiveness',
-    'Democraticness',
-    'Dependability',
-    'Determination',
-    'Devoutness',
-    'Diligence',
-    'Discipline',
-    'Discretion',
-    'Diversity',
-    'Dynamism',
-    'Economy',
-    'Effectiveness',
-    'Efficiency',
-    'Elegance',
-    'Empathy',
-    'Enjoyment',
-    'Enthusiasm',
-    'Equality',
-    'Excellence',
-    'Excitement',
-    'Expertise',
-    'Exploration',
-    'Expressiveness',
-    'Fairness',
-    'Faith',
-    'Family-orientedness',
-    'Fidelity',
-    'Fitness',
-    'Fluency',
-    'Focus',
-    'Freedom',
-    'Fun',
-    'Generosity',
-    'Goodness',
-    'Grace',
-    'Growth',
-    'Happiness',
-    'Hard Work',
-    'Health',
-    'Helping Society',
-    'Holiness',
-    'Honesty',
-    'Honor',
-    'Humility',
-    'Independence',
-    'Ingenuity',
-    'Inner Harmony',
-    'Inquisitiveness',
-    'Insightfulness',
-    'Intelligence',
-    'Intellectual Status',
-    'Intuition',
-    'Joy',
-    'Justice',
-    'Leadership',
-    'Legacy',
-    'Love',
-    'Loyalty',
-    'Making a difference',
-    'Mastery',
-    'Merit',
-    'Obedience',
-    'Openness',
-    'Order',
-    'Originality',
-    'Patriotism',
-    'Perfection',
-    'Piety',
-    'Positivity',
-    'Practicality',
-    'Preparedness',
-    'Professionalism',
-    'Prudence',
-    'Quality-orientation',
-    'Reliability',
-    'Resourcefulness',
-    'Restraint',
-    'Results-oriented',
-    'Rigor',
-    'Security',
-    'Self-actualization',
-    'Self-control',
-    'Selflessness',
-    'Self-reliance',
-    'Sensitivity',
-    'Serenity',
-    'Service',
-    'Shrewdness',
-    'Simplicity',
-    'Soundness',
-    'Speed',
-    'Spontaneity',
-    'Stability',
-    'Strategic',
-    'Strength',
-    'Structure',
-    'Success',
-    'Support',
-    'Teamwork',
-    'Temperance',
-    'Thankfulness',
-    'Thoroughness',
-    'Thoughtfulness',
-    'Timeliness',
-    'Tolerance',
-    'Traditionalism',
-    'Trustworthiness',
-    'Truth-seeking',
-    'Understanding',
-    'Uniqueness',
-    'Unity',
-    'Usefulness',
-    'Vision',
-    'Vitality',
+    // 'Adventurousness',
+    // 'Altruism',
+    // 'Ambition',
+    // 'Assertiveness',
+    // 'Balance',
+    // 'Being the best',
+    // 'Belonging',
+    // 'Boldness',
+    // 'Calmness',
+    // 'Carefulness',
+    // 'Challenge',
+    // 'Cheerfulness',
+    // 'Clear-mindedness',
+    // 'Commitment',
+    // 'Community',
+    // 'Compassion',
+    // 'Competitiveness',
+    // 'Consistency',
+    // 'Contentment',
+    // 'Continuous Improvement',
+    // 'Contribution',
+    // 'Control',
+    // 'Cooperation',
+    // 'Correctness',
+    // 'Courtesy',
+    // 'Creativity',
+    // 'Curiosity',
+    // 'Decisiveness',
+    // 'Democraticness',
+    // 'Dependability',
+    // 'Determination',
+    // 'Devoutness',
+    // 'Diligence',
+    // 'Discipline',
+    // 'Discretion',
+    // 'Diversity',
+    // 'Dynamism',
+    // 'Economy',
+    // 'Effectiveness',
+    // 'Efficiency',
+    // 'Elegance',
+    // 'Empathy',
+    // 'Enjoyment',
+    // 'Enthusiasm',
+    // 'Equality',
+    // 'Excellence',
+    // 'Excitement',
+    // 'Expertise',
+    // 'Exploration',
+    // 'Expressiveness',
+    // 'Fairness',
+    // 'Faith',
+    // 'Family-orientedness',
+    // 'Fidelity',
+    // 'Fitness',
+    // 'Fluency',
+    // 'Focus',
+    // 'Freedom',
+    // 'Fun',
+    // 'Generosity',
+    // 'Goodness',
+    // 'Grace',
+    // 'Growth',
+    // 'Happiness',
+    // 'Hard Work',
+    // 'Health',
+    // 'Helping Society',
+    // 'Holiness',
+    // 'Honesty',
+    // 'Honor',
+    // 'Humility',
+    // 'Independence',
+    // 'Ingenuity',
+    // 'Inner Harmony',
+    // 'Inquisitiveness',
+    // 'Insightfulness',
+    // 'Intelligence',
+    // 'Intellectual Status',
+    // 'Intuition',
+    // 'Joy',
+    // 'Justice',
+    // 'Leadership',
+    // 'Legacy',
+    // 'Love',
+    // 'Loyalty',
+    // 'Making a difference',
+    // 'Mastery',
+    // 'Merit',
+    // 'Obedience',
+    // 'Openness',
+    // 'Order',
+    // 'Originality',
+    // 'Patriotism',
+    // 'Perfection',
+    // 'Piety',
+    // 'Positivity',
+    // 'Practicality',
+    // 'Preparedness',
+    // 'Professionalism',
+    // 'Prudence',
+    // 'Quality-orientation',
+    // 'Reliability',
+    // 'Resourcefulness',
+    // 'Restraint',
+    // 'Results-oriented',
+    // 'Rigor',
+    // 'Security',
+    // 'Self-actualization',
+    // 'Self-control',
+    // 'Selflessness',
+    // 'Self-reliance',
+    // 'Sensitivity',
+    // 'Serenity',
+    // 'Service',
+    // 'Shrewdness',
+    // 'Simplicity',
+    // 'Soundness',
+    // 'Speed',
+    // 'Spontaneity',
+    // 'Stability',
+    // 'Strategic',
+    // 'Strength',
+    // 'Structure',
+    // 'Success',
+    // 'Support',
+    // 'Teamwork',
+    // 'Temperance',
+    // 'Thankfulness',
+    // 'Thoroughness',
+    // 'Thoughtfulness',
+    // 'Timeliness',
+    // 'Tolerance',
+    // 'Traditionalism',
+    // 'Trustworthiness',
+    // 'Truth-seeking',
+    // 'Understanding',
+    // 'Uniqueness',
+    // 'Unity',
+    // 'Usefulness',
+    // 'Vision',
+    // 'Vitality',
   ]);
-  // useState to keep tabs on which item should be rendered at a time
+
+  const [viewValueModal, setViewValueModal] = useState(true);
+  const [displayValueModal, setDisplayValueModal] = useState({display: 'unset'});
   const [valueIdx, setValueIdx] = useState(0);
-  // set accepted and rejected values. Only set the most recent change and reset
-  // the other to undefined with a helper function
   const [acceptedVal, setAcceptedVal] = useState('');
   const [rejectedVal, setRejectedVal] = useState('');
   const [displayAcceptedStyle, setDisplayAcceptedStyle] = useState({display: 'none'});
-  const [displayRejectedStyle, setDisplayRejectedStyle] = useState({display: 'none'})
-  // @TODO: create useEffect to toggle accepted or rejected based on values
+  const [displayRejectedStyle, setDisplayRejectedStyle] = useState({display: 'none'});
+  const [displayAddValuesStyle, setDisplayAddValuesStyle] = useState({display: 'none'});
+
+  /**
+   * Toggles CSS display attribute of .modal__value-span--msg-accepted
+   * and .modal__value-span--msg-rejected <p> tags when values are accepted
+   * Only set the most recent change and reset the other to undefined
+   * @modifies {displayAcceptedStyle}    based on acceptedVal
+   * @modifies {displayRejectedStyle}    based on rejectedVal
+   */
   useEffect(() => {
     if(acceptedVal) {
       setDisplayRejectedStyle({display: 'none'});
@@ -168,6 +176,34 @@ export const ValueWorksheet = () => {
       setDisplayRejectedStyle({display: 'unset'});
     }
   }, [acceptedVal, rejectedVal]);
+
+  /**
+   * Unsets CSS display attribute of .modal__value-span--msg-empty <p> tag from
+   * 'none' and sets CSS display attribute of
+   * .modal__value-span--msg-accepted and .modal__value-span--msg-rejected <p>
+   * tags when there are no more values in valuesList
+   * @modifies {displayAddValuesStyle}   based on valuesList.length
+   * @modifies {displayAcceptedStyle}    based on valuesList.length
+   * @modifies {displayRejectedStyle}    based on valuesList.length
+   */
+  useEffect(() => {
+    if(!valuesList.length) {
+      setDisplayAcceptedStyle({display: 'none'});
+      setDisplayRejectedStyle({display: 'none'});
+      setDisplayAddValuesStyle({display: 'unset'});
+    }
+  }, [valuesList]);
+
+  /**
+   * Sets display attribute of .modal__wrapper when toggleViewValueModal()
+   * sets viewValueModal
+   * @modifies {displayValueModal}    based on viewValueModal
+   */
+  useEffect(() => {
+      if(viewValueModal) setDisplayValueModal({display: 'unset'});
+      if(!viewValueModal) setDisplayValueModal({display: 'none'});
+  }, [viewValueModal]);
+
   /**
    * Helper function that advances value from valuesList to display
    * @modifies {valueIdx} calls setValueIdx to mutate valueIdx
@@ -194,6 +230,13 @@ export const ValueWorksheet = () => {
     }
   }
 
+  /**
+   * Helper function that calls advanceValue() and sets acceptedValue
+   * as well as resetting rejectedValue;
+   * @modifies {valueIdx} calls advanceValue() which calls setValueIdx
+   * @modifies {rejectedValue}
+   * @modifies {acceptedValue}
+   */
   const acceptAndAdvanceValue = () => {
     advanceValue();
     setRejectedVal('');
@@ -205,6 +248,8 @@ export const ValueWorksheet = () => {
    * New value at valueIdx is displayed
    * @param    {string} listValue - current value of valuesList at valueIdx
    * @modifies {valuesList} calls setValuesList to mutate valueIdx
+   * @modifies {rejectedValue}
+   * @modifies {acceptedValue}
    */
   const rejectAndAdvanceValue = (listValue, valueIdx) => {
     const valueToReject = listValue;
@@ -213,6 +258,20 @@ export const ValueWorksheet = () => {
     setValuesList(returnList);
     setAcceptedVal('');
     setRejectedVal(valueToReject);
+  }
+
+  const toggleViewValueModal = () => {
+    setViewValueModal(!viewValueModal)
+  }
+
+  /**
+   * Close modal and enter drag and drop view in "add values" mode
+   * @todo write function after implementing drag and drop mode and add values functionality
+   * @return {[type]} [description]
+   */
+  const toggleAddValuesFromModal = () => {
+    alert('functionality not yet implemented!');
+    return;
   }
 
   return (
@@ -228,7 +287,13 @@ export const ValueWorksheet = () => {
         rejectAndAdvanceValue={rejectAndAdvanceValue}
         displayAcceptedStyle={displayAcceptedStyle}
         displayRejectedStyle={displayRejectedStyle}
+        displayAddValuesStyle={displayAddValuesStyle}
+        toggleAddValuesFromModal={toggleAddValuesFromModal}
+        toggleViewValueModal={toggleViewValueModal}
+        displayValueModal={displayValueModal}
       />
+      { /* @TODO: not yet implemented */ }
+      { /* <DragAndDropValues /> */ }
     </>
   );
 };
