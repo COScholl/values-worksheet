@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ValueModal } from './ValueModal';
 
 export const ValueWorksheet = () => {
@@ -155,9 +155,19 @@ export const ValueWorksheet = () => {
   // the other to undefined with a helper function
   const [acceptedVal, setAcceptedVal] = useState('');
   const [rejectedVal, setRejectedVal] = useState('');
-
+  const [displayAcceptedStyle, setDisplayAcceptedStyle] = useState({display: 'none'});
+  const [displayRejectedStyle, setDisplayRejectedStyle] = useState({display: 'none'})
   // @TODO: create useEffect to toggle accepted or rejected based on values
-
+  useEffect(() => {
+    if(acceptedVal) {
+      setDisplayRejectedStyle({display: 'none'});
+      setDisplayAcceptedStyle({display: 'unset'});
+    }
+    if(rejectedVal) {
+      setDisplayAcceptedStyle({display: 'none'});
+      setDisplayRejectedStyle({display: 'unset'});
+    }
+  }, [acceptedVal, rejectedVal]);
   /**
    * Helper function that advances value from valuesList to display
    * @modifies {valueIdx} calls setValueIdx to mutate valueIdx
@@ -216,6 +226,8 @@ export const ValueWorksheet = () => {
         regressValue={regressValue}
         acceptAndAdvanceValue={acceptAndAdvanceValue}
         rejectAndAdvanceValue={rejectAndAdvanceValue}
+        displayAcceptedStyle={displayAcceptedStyle}
+        displayRejectedStyle={displayRejectedStyle}
       />
     </>
   );

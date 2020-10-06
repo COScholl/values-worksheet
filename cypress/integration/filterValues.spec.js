@@ -56,7 +56,12 @@ it(
     })
   });
 });
-it('displays confirmation when button "Accept" is clicked', () => {});
+it('displays confirmation when button "Accept" is clicked', () => {
+  cy.get('.modal__accept-dismiss-span--accept').click();
+  cy.get('.modal__message--accepted').should(($message) => {
+    expect($message.text()).to.not.eq(undefined);
+  });
+});
 it(
   'When I am presented with a value and click "Accept", I should see the next value from the list', () => {
   // asyc assign value of header to const
@@ -71,7 +76,12 @@ it(
     })
   });
 });
-it('displays confirmation when button "Reject" is clicked', () => {});
+it('displays confirmation when button "Reject" is clicked', () => {
+  cy.get('.modal__accept-dismiss-span--reject').click();
+  cy.get('.modal__message--rejected').should(($message) => {
+    expect($message.text()).to.not.eq(undefined);
+  });
+});
 it(
   'When I am presented with a value and click "Reject", that value should be removed from the list', () => {
     // asyc assign value of header to const

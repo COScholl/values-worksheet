@@ -2,6 +2,8 @@ import React from 'react';
 
 export const ValueModal = (props) => {
   const {
+    displayAcceptedStyle,
+    displayRejectedStyle,
     acceptAndAdvanceValue,
     rejectAndAdvanceValue,
     advanceValue,
@@ -72,20 +74,20 @@ export const ValueModal = (props) => {
         <span className='modal__value-span'>
           <PreviousButton />
           <h2 className='modal__header'>{valuesList[valueIdx]}</h2>
+          <p
+            className='modal__message--accepted'
+            style={displayAcceptedStyle}
+          >
+            {`${acceptedVal} Accepted!`}
+          </p>
+          <p
+            className='modal__message--rejected'
+            style={displayRejectedStyle}
+          >
+            {`${rejectedVal} Rejected!`}
+          </p>
           <NextButton />
         </span>
-        <p
-          className='modal__message--accepted'
-          /* style={{display: 'none'}} */
-        >
-          {`${acceptedVal} Accepted!`}
-        </p>
-        <p
-          className='modal__message--rejected'
-          /* style={{display: 'none'}} */
-        >
-          {`${rejectedVal} Rejected!`}
-        </p>
         <br />
         <span className='modal__accept-dismiss-span'>
           <RejectButton />
