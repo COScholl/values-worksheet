@@ -1,0 +1,196 @@
+:root {
+  --queen-b: #577590;
+  --queen-b-rgb: 87, 117, 144;
+  --vegas-gold: #CCB554;
+  --maize:  #F3CA40;
+  --y-or: #F2A541;
+  --y-or-rgb: 242, 165, 65;
+  --mango-tango: #F08A4B;
+  --middle-r: #D78A76;
+  --copper-r: #CB6F57;
+  --btnLight: #4d6479;
+  --btnDk: #3b4957;
+  --k: #121517;
+  --k-rgb: 18, 21, 23;
+  --w: #f9f8eb;
+  --w-rgb: 249, 248, 235;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.modal__btn {
+  background-color: var(--queen-b);
+  border: none;
+  /* border-radius: .5em; */
+  color: white;
+  padding: .5em 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: .75em;
+}
+
+.modal__btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.modal__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.modal__btn:disabled:hover {
+  box-shadow: none;
+}
+
+.modal {
+  /* absolute centering start */
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* absolute centering end */
+  /* alignment and spacing of children start */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-around; */
+  /* alignment and spacing of children end */
+  background-color: var(--maize);
+  /* set responsive width and height that maxes out */
+  width: 25em;
+  max-width: 100%;
+  height: 20em;
+  max-height: 100%;
+  box-shadow: 10px 10px 10px 2px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.modal__header {
+  /* alignment and spacing of children start */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  /* alignment and spacing of children end */
+  height: 4em;
+  color: var(--k);
+  border-bottom: 2px solid rgba(var(--k-rgb), 0.3);
+}
+
+.modal__form {
+  /* alignment and spacing of children start */
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  justify-content: space-around;
+  /* alignment and spacing of children end */
+  height: 12em;
+}
+
+.modal__value-span--msg-header {
+  /* background-color: rgba(var(--w-rgb), 0.1); */
+  padding: .5em 1em;
+  color: var(--k);
+}
+
+.modal__form > p {
+  display: flex;
+  width: auto;
+  height: auto;
+  align-self: center;
+  text-align: center;
+}
+
+.modal__value-span {
+  /* alignment and spacing of children start */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* alignment and spacing of children end */
+  background-color: rgba(var(--w-rgb), 0.1);
+  width: 100%;
+  margin-top: 2.5em;
+}
+
+.modal__value-span--prev,
+.modal__value-span--next,
+.modal__accept-dismiss-span--reject,
+.modal__accept-dismiss-span--accept,
+.modal__footer--close {
+  color: #f3dc89;
+}
+
+.modal__value-span--prev,
+.modal__value-span--next {
+  background-color: var(--btnLight);
+}
+
+.modal__accept-dismiss-span--reject,
+.modal__accept-dismiss-span--accept,
+.modal__footer--close {
+  background-color: var(--btnDk);
+}
+
+.modal__value-span--prev {
+  margin-left: 2em;
+}
+
+.modal__value-span--next {
+  margin-right: 2em;
+}
+
+.modal__accept-dismiss-span {
+  /* alignment and spacing of children start */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  /* alignment and spacing of children end */
+  width: 100%;
+}
+
+.modal__value-span--msg-accepted {
+  /* color: #59442a; */
+  color: #4c5824;
+  color: #5e6d2c;
+}
+
+.modal__value-span--msg-rejected {
+  color: #633e34;
+}
+
+.modal__value-span--msg-empty {
+  color: #3b4957;
+}
+
+.modal__footer {
+  /* alignment and spacing of children start */
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: space-around;
+  /* alignment and spacing of children end */
+  border-top: 2px solid rgba(var(--k-rgb), 0.3);
+  width: 100%;
+  height: 4em;
+}
+
+.modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: 1;
+  background-color: rgba(var(--queen-b-rgb), 0.3);
+  backdrop-filter: blur(2px);
+}
