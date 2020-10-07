@@ -1,4 +1,6 @@
 import React from 'react';
+import '../assets/css/valueModal.css';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 export const ValueModal = (props) => {
   const {
@@ -25,11 +27,11 @@ export const ValueModal = (props) => {
    */
   const PreviousButton = () => (
     <button
-      className='modal__value-span--prev btn'
+      className='modal__value-span--prev modal__btn'
       onClick={regressValue}
       disabled={!valuesList.length || valueIdx === 0}
     >
-      Previous
+      <FaChevronLeft />
     </button>
   );
 
@@ -40,11 +42,11 @@ export const ValueModal = (props) => {
    */
   const NextButton = () => (
     <button
-      className='modal__value-span--next btn'
+      className='modal__value-span--next modal__btn'
       onClick={advanceValue}
       disabled={!valuesList.length || valueIdx === valuesList.length - 1}
     >
-      Next
+      <FaChevronRight />
     </button>
   );
 
@@ -54,7 +56,7 @@ export const ValueModal = (props) => {
    */
   const AcceptButton = () => (
     <button
-      className='modal__accept-dismiss-span--accept btn'
+      className='modal__accept-dismiss-span--accept modal__btn'
       onClick={acceptAndAdvanceValue}
       disabled={
         !valuesList.length || valuesList[valueIdx] === acceptedVal
@@ -70,7 +72,7 @@ export const ValueModal = (props) => {
    */
   const RejectButton = () => (
     <button
-      className='modal__accept-dismiss-span--reject btn'
+      className='modal__accept-dismiss-span--reject modal__btn'
       onClick={() => rejectAndAdvanceValue(testValue)}
       disabled={!valuesList.length || !valuesList[valueIdx]}
     >
@@ -102,15 +104,16 @@ export const ValueModal = (props) => {
   );
 
   return (
+    // add overlay under modal but covering drag and drop element so as to prevent interaction with
+    // drag and drop while modal is open
     <>
       <div
-        className='modal__wrapper'
-        style={displayValueModal}
+        className='modal'
+        style={{...displayValueModal}}
       >
         <div className='modal__header'>
           <h2>Select Your Values</h2>
         </div>
-        <hr />
         <form className='modal__form'>
           <span className='modal__value-span'>
             <PreviousButton />
@@ -118,34 +121,32 @@ export const ValueModal = (props) => {
               <h3 className='modal__value-span--msg-header'>{valuesList[valueIdx]}</h3>
               <p
                 className='modal__value-span--msg-accepted'
-                style={displayAcceptedStyle}
+                style={{...displayAcceptedStyle}}
               >
                 {`${acceptedVal} Accepted!`}
               </p>
               <p
                 className='modal__value-span--msg-rejected'
-                style={displayRejectedStyle}
+                style={{...displayRejectedStyle}}
               >
                 {`${rejectedVal} Rejected!`}
               </p>
               <p
                 className='modal__value-span--msg-empty'
-                style={displayAddValuesStyle}
+                style={{...displayAddValuesStyle}}
               >
                 There are no more values in the list, why not {<AddValuesButton />} some values of your own?
               </p>
             </div>
             <NextButton />
           </span>
-          <br />
           <span className='modal__accept-dismiss-span'>
             <RejectButton />
             <AcceptButton />
           </span>
         </form>
-        <hr />
         <div className='modal__footer'>
-          <button onClick={toggleViewValueModal}>Close</button>
+          <button className='modal__footer--close modal__btn'onClick={toggleViewValueModal}>Close</button>
         </div>
       </div>
         <button

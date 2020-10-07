@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.modal__btn {
+  background-color: #008CBA; /* Blue */
+  border: none;
+  border-radius: .5em;
+  color: white;
+  padding: .5em 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: .75em;
+}
+
+.modal__btn:disabled {
+  background-color: #e7e7e7; /* Gray */
+  color: white;
+  cursor: not-allowed;
+}
+
+.modal {
+  /* absolute centering start */
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* absolute centering end */
+  /* alignment and spacing of children start */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-around; */
+  /* alignment and spacing of children end */
+  background-color: orange;
+  /* set responsive width and height that maxes out */
+  width: 25em;
+  max-width: 100%;
+  height: calc(20em + 4px);
+  max-height: 100%;
+  box-shadow: 10px 10px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.modal__header {
+  /* alignment and spacing of children start */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  /* alignment and spacing of children end */
+  height: 4em;
+  border-bottom: 2px solid gray;
+}
+
+.modal__form {
+  /* alignment and spacing of children start */
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  justify-content: space-around;
+  /* alignment and spacing of children end */
+  height: 12em;
+}
+
+.modal__value-span {
+  /* alignment and spacing of children start */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* alignment and spacing of children end */
+  width: 100%;
+  margin-top: 2.5em;
+}
+
+.modal__value-span--prev {
+  margin-left: 2em;
+}
+
+.modal__value-span--next {
+  margin-right: 2em;
+}
+
+.modal__accept-dismiss-span {
+  /* alignment and spacing of children start */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  /* alignment and spacing of children end */
+  width: 100%;
+}
+
+.modal__footer {
+  /* alignment and spacing of children start */
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: space-around;
+  /* alignment and spacing of children end */
+  border-top: 2px solid gray;
+  width: 100%;
+  height: 4em;
+}

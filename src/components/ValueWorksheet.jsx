@@ -174,11 +174,11 @@ export const ValueWorksheet = () => {
   useEffect(() => {
     if(acceptedVal) {
       setDisplayRejectedStyle({display: 'none'});
-      setDisplayAcceptedStyle({display: 'unset'});
+      setDisplayAcceptedStyle({display: 'flex'});
     }
     if(rejectedVal) {
       setDisplayAcceptedStyle({display: 'none'});
-      setDisplayRejectedStyle({display: 'unset'});
+      setDisplayRejectedStyle({display: 'flex'});
     }
   }, [acceptedVal, rejectedVal]);
 
@@ -195,7 +195,7 @@ export const ValueWorksheet = () => {
     if(!valuesList.length) {
       setDisplayAcceptedStyle({display: 'none'});
       setDisplayRejectedStyle({display: 'none'});
-      setDisplayAddValuesStyle({display: 'unset'});
+      setDisplayAddValuesStyle({display: 'flex'});
     }
   }, [valuesList]);
 
