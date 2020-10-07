@@ -80,6 +80,19 @@ export const ValueModal = (props) => {
     </button>
   );
 
+  /**
+   * Button component toggles modal display
+   * calls helper function toggleViewModal()
+   */
+  const CloseButton = () => (
+      <button
+        className='modal__footer--close modal__btn'
+        onClick={toggleViewValueModal}
+      >
+        Close
+      </button>
+  );
+
   // @TODO: @XXX implement drag and drop mode and then add this functionality
   // when a user rejects all values in the list or reaches the end of the list
   /**
@@ -118,41 +131,50 @@ export const ValueModal = (props) => {
           <span className='modal__value-span'>
             <PreviousButton />
             <div className='modal__value-span--msg-wrapper'>
-              <h3 className='modal__value-span--msg-header'>{valuesList[valueIdx]}</h3>
-              <p
-                className='modal__value-span--msg-accepted'
-                style={{...displayAcceptedStyle}}
-              >
-                {`${acceptedVal} Accepted!`}
-              </p>
-              <p
-                className='modal__value-span--msg-rejected'
-                style={{...displayRejectedStyle}}
-              >
-                {`${rejectedVal} Rejected!`}
-              </p>
-              <p
-                className='modal__value-span--msg-empty'
-                style={{...displayAddValuesStyle}}
-              >
-                There are no more values in the list, why not {<AddValuesButton />} some values of your own?
-              </p>
+              <h3 className='modal__value-span--msg-header'>
+                <em>{valuesList[valueIdx] || '...'}</em>
+              </h3>
             </div>
             <NextButton />
           </span>
+          <p
+            className='modal__value-span--msg-accepted'
+            style={{...displayAcceptedStyle}}
+          >
+            <em>
+              {`${acceptedVal} Accepted!`}
+            </em>
+          </p>
+          <p
+            className='modal__value-span--msg-rejected'
+            style={{...displayRejectedStyle}}
+          >
+            <em>
+              {`${rejectedVal} Rejected!`}
+            </em>
+          </p>
+          <p
+            className='modal__value-span--msg-empty'
+            style={{...displayAddValuesStyle}}
+          >
+            <em>
+              There are no more values in the list, why not {<AddValuesButton />} some values of your own?
+            </em>
+          </p>
           <span className='modal__accept-dismiss-span'>
             <RejectButton />
             <AcceptButton />
           </span>
         </form>
         <div className='modal__footer'>
-          <button className='modal__footer--close modal__btn'onClick={toggleViewValueModal}>Close</button>
+          <CloseButton />
         </div>
       </div>
-        <button
-          style={{display: displayValueModal.display === 'none' ? 'unset' : 'none'}}
-          onClick={toggleViewValueModal}>Open Value Modal</button>
-      <div>
+      { /* , display: displayValueModal.display === 'none' ? 'unset' : 'none' */ }
+      <button
+        onClick={toggleViewValueModal}>Open Value Modal
+      </button>
+      <div className='modal__overlay' style={{...displayValueModal}}>
       </div>
     </>
   )
