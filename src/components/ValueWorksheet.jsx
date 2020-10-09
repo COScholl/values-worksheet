@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ValueModal } from './ValueModal';
+import { DragAndDropValues } from './DragAndDropValues';
 
 export const ValueWorksheet = () => {
 
@@ -305,8 +306,9 @@ export const ValueWorksheet = () => {
         toggleViewValueModal={toggleViewValueModal}
         displayValueModal={displayValueModal}
       />
-      { /* @TODO: not yet implemented */ }
-      { /* <DragAndDropValues /> */ }
+      <DragAndDropValues
+        valuesList={valuesList}
+      />
     </>
   );
 };

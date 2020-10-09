@@ -1,0 +1,6 @@
+value_card follow-up:
+  - check CSS for efficiency and organize
+  - check JSX files for efficiency and restructure props and prop destructuring
+  - style button click
+  - consider style guidelines going forward
+  - write tests for valueList
