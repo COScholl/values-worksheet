@@ -308,6 +308,7 @@ export const ValueWorksheet = () => {
       />
       <DragAndDropValues
         valuesList={valuesList}
+        setValuesList={setValuesList}
       />
     </>
   );

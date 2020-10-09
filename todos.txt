@@ -4,3 +4,5 @@ value_card follow-up:
   - style button click
   - consider style guidelines going forward
   - write tests for valueList
+  - react-context to prevent prop-drilling
+  - redux implementation ?

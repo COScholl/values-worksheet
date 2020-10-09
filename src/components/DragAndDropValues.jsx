@@ -3,12 +3,13 @@ import { DraggableList } from './DraggableList';
 
 export const DragAndDropValues = (props) => {
 
-  const { valuesList } = props;
+  const { valuesList, setValuesList } = props;
 
   return (
     <>
       <DraggableList
         valuesList={valuesList}
+        setValuesList={setValuesList}
       />
     </>
   );
