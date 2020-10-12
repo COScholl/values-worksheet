@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const DragAndDropBoard = (props) => {
+export const DragAndDropList = (props) => {
 
   const drop = (event) => {
     event.preventDefault();

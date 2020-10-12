@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ValueModal } from './ValueModal';
 import { DragAndDropValues } from './DragAndDropValues';
+import { DragAndDropList } from './DragAndDropList';
 import { DragAndDropBoard } from './DragAndDropBoard';
 import { Card } from './Card';
 
@@ -290,25 +291,46 @@ export const ValueWorksheet = () => {
     return;
   }
 
+  /**
+   * Create UUID
+   * Algorithm from https://www.w3resource.com/javascript-exercises/javascript-math-exercise-23.php
+   * @return {string} universally unique identifier
+   */
+  const createUUID = () => {
+    let dt = new Date().getTime();
+    const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+        const r = (dt + Math.random()*16)%16 | 0;
+        dt = Math.floor(dt/16);
+        return (c === 'x' ? r : (r&0x3|0x8)).toString(16); // eslint-disable-line no-mixed-operators
+    });
+
+    return uuid;
+}
+
   return (
     <div className='flexbox'>
       <DragAndDropValues
         valuesList={valuesList}
         setValuesList={setValuesList}
       />
+      <DragAndDropList
+        className='list board'
+      >
+        {valuesList.map((value, idx) => <Card id={createUUID()} className='card' draggable='true'>{value}</Card>)}
+      </DragAndDropList>
       <DragAndDropBoard className='board-1 board'>
-        <Card id='card-1' className='card' draggable='true'>
+        <Card id={createUUID()} className='card' draggable='true'>
           <p>Card One</p>
         </Card>
-        <Card id='card-2' className='card' draggable='true'>
+        <Card id={createUUID()} className='card' draggable='true'>
           <p>Card Two</p>
         </Card>
       </DragAndDropBoard>
       <DragAndDropBoard className='board-2 board'>
-        <Card id='card-3' className='card' draggable='true'>
+        <Card id={createUUID()} className='card' draggable='true'>
           <p>Card Three</p>
         </Card>
-        <Card id='card-4' className='card' draggable='true'>
+        <Card id={createUUID()} className='card' draggable='true'>
           <p>Card Four</p>
         </Card>
       </DragAndDropBoard>

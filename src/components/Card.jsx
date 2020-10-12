@@ -9,10 +9,10 @@ export const Card = (props) => {
       target.style.display = 'none';
     }, 0);
   };
-  const dragOver = (event) => event.stopPropagation();
+  const dragOver = (event) => event.preventDefault();
 
   return (
-    <div
+    <li
       id={props.id}
       className={props.className}
       draggable={props.draggable}
@@ -20,6 +20,6 @@ export const Card = (props) => {
       onDragOver={dragOver}
     >
       { props.children }
-    </div>
+    </li>
   );
 };

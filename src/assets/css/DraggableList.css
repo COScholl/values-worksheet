@@ -26,6 +26,7 @@
   align-items: center;
 }
 .draggable-list__item {
+  list-style: none;
   background-color: var(--maize);
   width: 18vw;
   margin: .25rem 0;
