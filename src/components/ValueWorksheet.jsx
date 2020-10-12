@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { ValueModal } from './ValueModal';
 import { DragAndDropValues } from './DragAndDropValues';
+import { DragAndDropBoard } from './DragAndDropBoard';
+import { Card } from './Card';
 
 export const ValueWorksheet = () => {
 
@@ -289,7 +291,27 @@ export const ValueWorksheet = () => {
   }
 
   return (
-    <>
+    <div className='flexbox'>
+      <DragAndDropValues
+        valuesList={valuesList}
+        setValuesList={setValuesList}
+      />
+      <DragAndDropBoard className='board-1 board'>
+        <Card id='card-1' className='card' draggable='true'>
+          <p>Card One</p>
+        </Card>
+        <Card id='card-2' className='card' draggable='true'>
+          <p>Card Two</p>
+        </Card>
+      </DragAndDropBoard>
+      <DragAndDropBoard className='board-2 board'>
+        <Card id='card-3' className='card' draggable='true'>
+          <p>Card Three</p>
+        </Card>
+        <Card id='card-4' className='card' draggable='true'>
+          <p>Card Four</p>
+        </Card>
+      </DragAndDropBoard>
       <ValueModal
         valuesList={valuesList}
         valueIdx={valueIdx}
@@ -306,10 +328,6 @@ export const ValueWorksheet = () => {
         toggleViewValueModal={toggleViewValueModal}
         displayValueModal={displayValueModal}
       />
-      <DragAndDropValues
-        valuesList={valuesList}
-        setValuesList={setValuesList}
-      />
-    </>
+    </div>
   );
 };

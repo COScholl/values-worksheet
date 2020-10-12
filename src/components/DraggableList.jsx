@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import '../assets/css/DraggableList.css';
 
 export const DraggableList = (props) => {
 
@@ -30,10 +31,11 @@ export const DraggableList = (props) => {
 
   return (
     <>
-      <ul>
+      <ul className='draggable-list'>
         {
           valuesList && valuesList.map((value, idx) => (
             <li
+              className='draggable-list__item'
               onDragStart={(e) => handleDragStart(e, idx)}
               onDragEnter={(e) => handleDragEnter(e, idx)}
               onDragOver={(e) => e.preventDefault()}

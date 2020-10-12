@@ -190,7 +190,9 @@
   top: 0;
   left: 0;
   min-width: 100vw;
+  width: 100%;
   min-height: 100vh;
+  height: 900vh;
   z-index: 1;
   background-color: rgba(var(--queen-b-rgb), 0.3);
   backdrop-filter: blur(2px);

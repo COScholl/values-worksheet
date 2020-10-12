@@ -1,0 +1,40 @@
+:root {
+  --queen-b: #577590;
+  --queen-b-rgb: 87, 117, 144;
+  --vegas-gold: #CCB554;
+  --maize:  #F3CA40;
+  --y-or: #F2A541;
+  --y-or-rgb: 242, 165, 65;
+  --mango-tango: #F08A4B;
+  --middle-r: #D78A76;
+  --copper-r: #CB6F57;
+  --btnLight: #4d6479;
+  --btnDk: #3b4957;
+  --k: #121517;
+  --k-rgb: 18, 21, 23;
+  --w: #f9f8eb;
+  --w-rgb: 249, 248, 235;
+}
+/* TODO: reactive */
+.draggable-list {
+  background-color: var(--queen-b);
+  width: 20vw;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.draggable-list__item {
+  background-color: var(--maize);
+  width: 18vw;
+  margin: .25rem 0;
+}
+
+.draggable-list__item:hover {
+  cursor: pointer;
+}
+
+.draggable-list__item:active {
+  cursor: grabbing;
+}

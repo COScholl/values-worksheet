@@ -1,0 +1,63 @@
+:root {
+  --queen-b: #577590;
+  --queen-b-rgb: 87, 117, 144;
+  --vegas-gold: #CCB554;
+  --maize:  #F3CA40;
+  --y-or: #F2A541;
+  --y-or-rgb: 242, 165, 65;
+  --mango-tango: #F08A4B;
+  --middle-r: #D78A76;
+  --copper-r: #CB6F57;
+  --btnLight: #4d6479;
+  --btnDk: #3b4957;
+  --k: #121517;
+  --k-rgb: 18, 21, 23;
+  --w: #f9f8eb;
+  --w-rgb: 249, 248, 235;
+}
+
+*,
+*::before,
+*::after  {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--y-or);
+}
+
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  /* margin: 0 auto; */
+
+  /* padding: 15px; */
+}
+
+.flexbox .board {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 20vw;
+
+  background-color: var(--queen-b);
+
+  padding: .5rem;
+}
+
+.flexbox .board .card {
+  background-color: var(--maize);
+  max-width: 19vw;
+  cursor: pointer;
+  margin-bottom: .5rem;
+}
